@@ -1,47 +1,12 @@
 * { box-sizing: border-box; }
-*::before { box-sizing: border-box; }
-*::after { box-sizing: border-box; }
-html { margin: 0; padding: 0; }
-body { margin: 0; padding: 0; }
-div { margin: 0; padding: 0; }
-span { margin: 0; padding: 0; }
-h1 { margin: 0; padding: 0; }
-h2 { margin: 0; padding: 0; }
-h3 { margin: 0; padding: 0; }
-h4 { margin: 0; padding: 0; }
-h5 { margin: 0; padding: 0; }
-h6 { margin: 0; padding: 0; }
-p { margin: 0; padding: 0; }
-a { margin: 0; padding: 0; }
-strong { margin: 0; padding: 0; }
-em { margin: 0; padding: 0; }
-ol { margin: 0; padding: 0; }
-ul { margin: 0; padding: 0; }
-li { margin: 0; padding: 0; }
-figure { margin: 0; padding: 0; }
-figcaption { margin: 0; padding: 0; }
-footer { margin: 0; padding: 0; }
-header { margin: 0; padding: 0; }
-nav { margin: 0; padding: 0; }
-nav ul { margin: 0; padding: 0; }
-nav li { margin: 0; padding: 0; }
-section { margin: 0; padding: 0; }
-main { margin: 0; padding: 0; }
-article { margin: 0; padding: 0; }
-aside { margin: 0; padding: 0; }
-audio { margin: 0; padding: 0; }
-video { margin: 0; padding: 0; }
-canvas { margin: 0; padding: 0; }
-iframe { margin: 0; padding: 0; }
-ol { list-style: none; }
-ul { list-style: none; }
-img { max-width: 100%; }
-img { height: auto; }
-form { margin: 0; padding: 0; }
-fieldset { margin: 0; padding: 0; }
-legend { margin: 0; padding: 0; }
-label { margin: 0; padding: 0; }
-input { margin: 0; padding: 0; }
-textarea { margin: 0; padding: 0; }
-select { margin: 0; padding: 0; }
-button { margin: 0; padding: 0; }
+*::before, *::after { box-sizing: border-box; }
+
+html, body, div, span, h1, h2, h3, h4, h5, h6,
+p, a, strong, em, ol, ul, li, figure, figcaption,
+footer, header, nav, section, main, article, aside,
+audio, video, canvas, iframe, form, fieldset, legend,
+label, input, textarea, select, button { margin: 0; padding: 0; }
+
+ul, ol { list-style: none; }
+
+img { max-width: 100%; height: auto; }
