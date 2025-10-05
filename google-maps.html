@@ -1,37 +1,3 @@
-var mapElement = document.getElementById('map');
-  if (mapElement) {
-    var loader = document.getElementById('gmapsLoader');
-    var key = loader ? loader.getAttribute('data-api-key') : '';
-
-    function initMap() {
-      var center = { lat: -0.1807, lng: -78.4678 };
-      var map = new google.maps.Map(mapElement, { center: center, zoom: 12 });
-      var marker = new google.maps.Marker({ position: center, map: map, title: 'Main Marker' });
-      var info = new google.maps.InfoWindow({ content: 'Hello from Quito!' });
-      marker.addListener('click', function () { info.open(map, marker); });
-      map.addListener('click', function (e) { new google.maps.Marker({ position: e.latLng, map: map }); });
-    }
-
-    var keyText = (key || '').trim();
-    if (!keyText || keyText === 'YOUR_API_KEY') {
-      mapElement.textContent = 'Add your Google Maps API key in google-maps.html (data-api-key) to view the map.';
-      mapElement.style.display = 'grid';
-      mapElement.style.placeItems = 'center';
-      mapElement.style.color = '#444';
-      mapElement.style.font = '16px system-ui, sans-serif';
-    } else {
-      var script = document.createElement('script');
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(keyText);
-      script.async = true;
-      script.addEventListener('load', initMap);
-      script.addEventListener('error', function(){
-        mapElement.textContent = 'The Google Maps script could not load. Check your API key.';
-        mapElement.style.display = 'grid';
-        mapElement.style.placeItems = 'center';
-      });
-      document.head.appendChild(script);
-    }
-  }
 <!doctype html>
 <html lang="en">
 <head>
