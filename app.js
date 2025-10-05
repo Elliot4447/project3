@@ -23,5 +23,8 @@
     back.textContent = '↑';
     back.type = 'button';
     d.body.appendChild(back);
+    back.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   });
 })();
