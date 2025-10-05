@@ -27,4 +27,39 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.scrollY > 300) back.style.display = 'inline-block';
     else back.style.display = 'none';
   });
+
+  var mapElement = document.getElementById('map');
+  if (mapElement) {
+    var loader = document.getElementById('gmapsLoader');
+    var key = loader ? loader.getAttribute('data-api-key') : '';
+
+    function initMap() {
+      var center = { lat: 40.73061, lng: -73.935242 };
+      var map = new google.maps.Map(mapElement, {
+        center: center,
+        zoom: 11
+      });
+
+      var marker = new google.maps.Marker({
+        position: center,
+        map: map,
+        title: 'Main Marker'
+      });
+
+      var info = new google.maps.InfoWindow({
+        content: 'Hello from New York!'
+      });
+
+      marker.addListener('click', function () {
+        info.open(map, marker);
+      });
+    }
+
+    if (key) {
+      var script = document.createElement('script');
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&callback=initMap';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }
 });
