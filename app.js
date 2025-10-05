@@ -26,5 +26,17 @@
     back.addEventListener('click', function(){
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Hide the button by default
+    back.style.display = 'none';
+
+    // Show/hide the button on scroll
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 300){
+        back.style.display = 'inline-block';
+      } else {
+        back.style.display = 'none';
+      }
+    });
   });
 })();
