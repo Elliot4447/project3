@@ -1,3 +1,28 @@
+var mapElement = document.getElementById('map');
+var gmapsLoader = document.getElementById('gmapsLoader');
+var key = gmapsLoader ? gmapsLoader.getAttribute('data-api-key') : null;
+
+function initMap() {
+  var map = new google.maps.Map(mapElement, {
+    center: { lat: 37.7749, lng: -122.4194 },
+    zoom: 12
+  });
+}
+
+if (key) {
+  var script = document.createElement('script');
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(key);
+  script.async = true;
+  script.addEventListener('load', initMap);
+  document.head.appendChild(script);
+} else {
+  mapElement.textContent = 'Add your Google Maps API key in google-maps.html (data-api-key) to view the map.';
+  mapElement.style.display = 'grid';
+  mapElement.style.placeItems = 'center';
+  mapElement.style.color = '#444';
+  mapElement.style.font = '16px system-ui, sans-serif';
+}
+
 <!doctype html>
 <html lang="en">
 <head>
