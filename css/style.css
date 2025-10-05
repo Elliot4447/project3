@@ -27,7 +27,6 @@ h1 { margin-top: 1.5rem; margin-bottom: 0.5rem; }
 h2 { margin-top: 1.5rem; margin-bottom: 0.5rem; }
 h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; }
 p { margin: 0 0 1rem 0; }
-p { margin: 0; padding: 0; }
 
 a { color: blue; }
 
@@ -77,3 +76,5 @@ img {
 .page3 article { margin-bottom: 1.5rem; }
 .page3 h2 { margin-top: 0; }
 .page3 figure { text-align: center; }
+
+ .map-page #map { border: 1px solid #ccc; border-radius: 8px; }
