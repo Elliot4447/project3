@@ -78,3 +78,20 @@ img {
 .page3 figure { text-align: center; }
 
  .map-page #map { border: 1px solid #ccc; border-radius: 8px; }
+
+
+@media (min-width: 600px) {
+  .home .wrapper { padding: 2rem; }
+  .home .site-nav ul { display: flex; gap: 1rem; justify-content: center; }
+  .home .site-nav li { margin: 0 0.75rem; float: none; }
+  .home img { border-radius: 0.5rem; }
+  .home .index-hero { padding: 3rem 2rem; }
+}
+
+@media (min-width: 900px) {
+  .home .wrapper { max-width: 70rem; padding: 2.5rem; }
+  .home .site-nav a { font-size: 1.0625rem; }
+  .home p { font-size: 1.0625rem; line-height: 1.7; }
+  .home h1 { font-size: 2rem; }
+  .home .index-hero { margin: 2rem 0; }
+}
