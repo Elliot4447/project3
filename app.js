@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
       marker.addListener('click', function () {
         info.open(map, marker);
       });
+
+      // Allow users to add new markers by clicking the map
+      map.addListener('click', function (event) {
+        new google.maps.Marker({
+          position: event.latLng,
+          map: map
+        });
+      });
     }
 
     if (key) {
