@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var loader = document.getElementById('gmapsLoader');
     var key = loader ? loader.getAttribute('data-api-key') : '';
 
-    function initMap() {
+    window.initMap = function () {
+      var mapElement = document.getElementById('map');
+      if (!mapElement) return;
+
       var center = { lat: 40.73061, lng: -73.935242 };
       var map = new google.maps.Map(mapElement, {
         center: center,
@@ -54,14 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
         info.open(map, marker);
       });
 
-      // Allow users to add new markers by clicking the map
       map.addListener('click', function (event) {
         new google.maps.Marker({
           position: event.latLng,
           map: map
         });
       });
-    }
+    };
 
     if (key) {
       var script = document.createElement('script');
